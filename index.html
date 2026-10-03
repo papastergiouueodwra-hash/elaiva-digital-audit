@@ -1,1 +1,802 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Free Digital Audit | ELåiVA</title>
+
+  <meta
+    name="description"
+    content="Ζήτησε δωρεάν Digital Audit από την ELåiVA και ανακάλυψε τι μπορεί να βελτιωθεί στην online παρουσία της επιχείρησής σου."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f5f7;
+      color: #242126;
+      line-height: 1.6;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 35px 20px 60px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* LOGO */
+
+    .logo {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .logo-main {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      letter-spacing: 1px;
+      font-style: italic;
+    }
+
+    .logo-sub {
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-top: 4px;
+      color: #77707a;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 55px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 17px;
+      border: 1px solid #d9a9c5;
+      border-radius: 50px;
+      color: #a85d87;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      background: #fffafd;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      font-weight: normal;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: #b76b96;
+      font-style: italic;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #69626b;
+      font-size: 17px;
+    }
+
+    /* AUDIT DESCRIPTION */
+
+    .about {
+      background: #ffffff;
+      border: 1px solid #eee5eb;
+      border-radius: 25px;
+      padding: 35px;
+      margin-bottom: 35px;
+      box-shadow: 0 10px 35px rgba(80, 45, 65, 0.05);
+    }
+
+    .about h2 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #69626b;
+      font-size: 15px;
+      max-width: 850px;
+    }
+
+    .no-cost {
+      margin-top: 17px;
+      font-weight: bold;
+      color: #9c557e;
+    }
+
+    /* CHECKS */
+
+    .checks-section {
+      margin-bottom: 55px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 31px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+
+    .check {
+      background: #ffffff;
+      border: 1px solid #eee4ea;
+      border-radius: 16px;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .check:hover {
+      transform: translateY(-2px);
+      border-color: #d7a7c2;
+    }
+
+    .check-icon {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: #f4dfeb;
+      color: #a85d87;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* FORM */
+
+    .form-wrapper {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 15px 50px rgba(80, 45, 65, 0.07);
+      border: 1px solid #eee5eb;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-header h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .form-header p {
+      color: #77707a;
+      font-size: 14px;
+    }
+
+    form {
+      display: grid;
+      gap: 19px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #39333a;
+    }
+
+    label span {
+      font-weight: normal;
+      color: #9a929b;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #ddd4db;
+      border-radius: 12px;
+      background: #fcfafc;
+      color: #28232a;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #c487a9;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(196, 135, 169, 0.12);
+    }
+
+    input::placeholder {
+      color: #aaa2aa;
+    }
+
+    /* CONSENT */
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 4px;
+      font-size: 12px;
+      color: #77707a;
+      line-height: 1.5;
+    }
+
+    .consent input {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: #b76b96;
+    }
+
+    /* BUTTON */
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 13px;
+      padding: 16px 22px;
+      background: #b76b96;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: 0.25s ease;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background: #9f577f;
+      transform: translateY(-1px);
+    }
+
+    button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+    }
+
+    /* SUCCESS */
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    .success-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #f1ddea;
+      color: #a85d87;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .success h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+
+    .success p {
+      color: #716a72;
+      font-size: 15px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      margin-top: 45px;
+      color: #918993;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: #6f6670;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .page {
+        padding: 25px 15px 45px;
+      }
+
+      .logo {
+        margin-bottom: 35px;
+      }
+
+      .logo-main {
+        font-size: 31px;
+      }
+
+      .hero {
+        margin-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .about {
+        padding: 25px 21px;
+      }
+
+      .about h2 {
+        font-size: 25px;
+      }
+
+      .checks {
+        grid-template-columns: 1fr;
+      }
+
+      .form-wrapper {
+        padding: 27px 20px;
+        border-radius: 22px;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-header h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page">
+
+    <div class="container">
+
+      <!-- LOGO -->
+
+      <div class="logo">
+        <div class="logo-main">ELåiVA</div>
+        <div class="logo-sub">T&S COMPANY</div>
+      </div>
+
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="badge">
+          FREE DIGITAL AUDIT
+        </div>
+
+        <h1>
+          Μήπως η online παρουσία της επιχείρησής σου
+          μπορεί να γίνει <span>καλύτερη;</span>
+        </h1>
+
+        <p class="hero-text">
+          Ζήτησε έναν δωρεάν, χειροκίνητο έλεγχο της online παρουσίας
+          της επιχείρησής σου από την ομάδα της ELåiVA.
+        </p>
+
+      </section>
+
+
+      <!-- ABOUT -->
+
+      <section class="about">
+
+        <h2>Τι είναι το Free Digital Audit;</h2>
+
+        <p>
+          Είναι μια δωρεάν, χειροκίνητη αξιολόγηση της online παρουσίας
+          της επιχείρησής σου από την ομάδα της ELåiVA. Ελέγχουμε την
+          ιστοσελίδα και τα social media σου και εντοπίζουμε σημεία που
+          μπορούν να βελτιωθούν, από την εικόνα και την εμπειρία του
+          επισκέπτη μέχρι την επικοινωνία και τις κρατήσεις.
+        </p>
+
+        <p class="no-cost">
+          Χωρίς κόστος και χωρίς καμία υποχρέωση.
+          Μετά τον έλεγχο, θα λάβεις προσωπικά τα βασικά ευρήματα
+          και τις προτάσεις μας.
+        </p>
+
+      </section>
+
+
+      <!-- WHAT WE CHECK -->
+
+      <section class="checks-section">
+
+        <h2 class="section-title">
+          Τι ελέγχουμε;
+        </h2>
+
+        <div class="checks">
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Website &amp; σχεδιασμό</div>
+          </div>
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Mobile εμπειρία</div>
+          </div>
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Instagram παρουσία</div>
+          </div>
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Κρατήσεις / επικοινωνία</div>
+          </div>
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Υπηρεσίες &amp; τιμές</div>
+          </div>
+
+          <div class="check">
+            <div class="check-icon">✓</div>
+            <div>Γενική online εικόνα</div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- FORM -->
+
+      <section class="form-wrapper">
+
+        <div class="form-header">
+
+          <h2>Ζήτησε το δωρεάν Audit</h2>
+
+          <p>
+            Συμπλήρωσε τα στοιχεία της επιχείρησής σου
+            και θα επικοινωνήσουμε μαζί σου μετά τον έλεγχο.
+          </p>
+
+        </div>
+
+
+        <form id="auditForm">
+
+          <div class="row">
+
+            <div class="field">
+
+              <label for="businessName">
+                Όνομα επιχείρησης *
+              </label>
+
+              <input
+                type="text"
+                id="businessName"
+                name="businessName"
+                placeholder="π.χ. Luna Beauty Studio"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="sector">
+                Κλάδος *
+              </label>
+
+              <select id="sector" name="sector" required>
+
+                <option value="">
+                  Επιλέξτε κλάδο
+                </option>
+
+                <option value="Ομορφιά">
+                  Ομορφιά / Κομμωτήριο / Nails
+                </option>
+
+                <option value="Εστίαση">
+                  Εστίαση / Καφέ / Bar
+                </option>
+
+                <option value="Τουρισμός">
+                  Τουρισμός / Κατάλυμα
+                </option>
+
+                <option value="Λιανική">
+                  Λιανική / E-shop
+                </option>
+
+                <option value="Υπηρεσίες">
+                  Υπηρεσίες
+                </option>
+
+                <option value="Άλλο">
+                  Άλλο
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="website">
+              Website <span>(αν υπάρχει)</span>
+            </label>
+
+            <input
+              type="url"
+              id="website"
+              name="website"
+              placeholder="https://example.gr"
+            >
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="instagram">
+              Instagram <span>(αν υπάρχει)</span>
+            </label>
+
+            <input
+              type="text"
+              id="instagram"
+              name="instagram"
+              placeholder="@yourbusiness"
+            >
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="field">
+
+              <label for="email">
+                Email *
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="phone">
+                Τηλέφωνο <span>(προαιρετικό)</span>
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="69XXXXXXXX"
+              >
+
+            </div>
+
+          </div>
+
+
+          <label class="consent">
+
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              required
+            >
+
+            <span>
+              Συμφωνώ να χρησιμοποιηθούν τα στοιχεία που συμπλήρωσα
+              αποκλειστικά για την επικοινωνία σχετικά με το δωρεάν
+              Digital Audit.
+            </span>
+
+          </label>
+
+
+          <button type="submit" id="submitButton">
+            ΖΗΤΗΣΕ ΤΟ ΔΩΡΕΑΝ AUDIT →
+          </button>
+
+        </form>
+
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success" id="successMessage">
+
+          <div class="success-icon">
+            ✓
+          </div>
+
+          <h2>Το λάβαμε! ✨</h2>
+
+          <p>
+            Ευχαριστούμε για το ενδιαφέρον σου.
+            Θα ελέγξουμε χειροκίνητα την online παρουσία
+            της επιχείρησής σου και θα επικοινωνήσουμε μαζί σου
+            με τα βασικά ευρήματα και τις προτάσεις μας.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer>
+        <strong>ELåiVA — T&amp;S COMPANY</strong><br>
+        Custom digital solutions for modern businesses.
+      </footer>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    const form = document.getElementById("auditForm");
+    const button = document.getElementById("submitButton");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "ΥΠΟΒΟΛΗ...";
+
+      const formData = new FormData(form);
+
+      const data = {
+        businessName: formData.get("businessName"),
+        sector: formData.get("sector"),
+        website: formData.get("website"),
+        instagram: formData.get("instagram"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        consent: formData.get("consent") === "on"
+      };
+
+
+      /*
+        ΠΡΟΣΟΧΗ:
+
+        Εδώ θα συνδέσουμε αργότερα το API του ELåiVA,
+        ώστε οι αιτήσεις να αποθηκεύονται αυτόματα.
+
+        Δεν κάνουμε αυτόματο Digital Audit.
+        Η αξιολόγηση θα γίνεται χειροκίνητα από εσένα.
+      */
+
+
+      try {
+
+        const response = await fetch(
+          "https://elaiva-leads-api.vercel.app/api/audit-request",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          }
+        );
+
+
+        if (!response.ok) {
+          throw new Error("Submission failed");
+        }
+
+
+        form.style.display = "none";
+        successMessage.style.display = "block";
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert(
+          "Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά."
+        );
+
+        button.disabled = false;
+        button.textContent = "ΖΗΤΗΣΕ ΤΟ ΔΩΡΕΑΝ AUDIT →";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
